@@ -30,27 +30,27 @@ The selected text will now be replaced with the sorted and unique output (or wha
 
 ### Sort and Unique ###
 Run Shell Script, set shell to Bash and insert the following content:
-'''
+```
 sort -u
-'''
+```
 
 ### Prettify JSON ###
 Run Shell Script, set shell to Python3 and insert the following content:
-'''
+```
 import sys, json
 print(json.dumps(json.loads(sys.stdin.read()), indent=4))
-'''
+```
 
 ### Compress video ###
 Workflow received current: movie files IN Finder.app
 Input is: entire selection
 Image: Action
 Colour: blue
----
+- - - - - - - - - - - - - 
 Get Selected Finder Items
 Run Shell Script, set shell to Bash, Pass input: as arguments and insert the following content:
-'''
+```
 for f in "$@"; do
 	/usr/local/bin/ffmpeg -i "$f" -vcodec libx264 -crf 27 "$f"_crf27.mp4
 done
-'''
+```
